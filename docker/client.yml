@@ -1,0 +1,21 @@
+logging:
+  level:
+    mutualtlsissue: DEBUG
+
+test-client:
+  # URL of external server.
+  externalWebService: https://server.mutualtls.devtest/
+  # The path to the key store holding the single client certificate needed for mutual TLS.
+  keyStoreFilePath: "client-keystore.p12"
+  # The password to the key store.
+  keyStorePassword: "mutualtls"
+  # The password to the single client certificate in the key store.
+  keyStoreKeyPassword: "mutualtls"
+  # The alias of the client key required in the key store.
+  keyStoreAlias: "mutualtlsclient"
+  # The path to the trust store holding the trusted root CAs needed to establish TLS connections.
+  trustStoreFilePath: "client-truststore.p12"
+  # The password to the key store.
+  trustStorePassword: "mutualtls"
+
+

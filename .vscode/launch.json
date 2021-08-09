@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TestServer<guardpost-devtest-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "mutualtlsissue.TestServer",
+            "projectName": "guardpost-devtest-server",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<mutualtls-client>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "mutualtlsissue.Application",
+            "projectName": "mutualtls-client",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-TestServer<mutualtls-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "mutualtlsissue.TestServer",
+            "projectName": "mutualtls-server",
+            "args": ""
+        }
+    ]
+}

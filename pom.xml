@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		
+	<name>Mutual TLS Issue Reproduction Project Parent</name>
+	<description>Mutual TLS Issue Reproduction Project Parent POM</description>
+		 		 
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mutualtlsissue</groupId>
+	<artifactId>parent</artifactId>
+	<version>SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.3</version>
+	</parent>
+	
+	<!-- ============================================================= -->
+	<!-- Modules -->
+	<!-- ============================================================= -->
+	<modules>		
+		<module>server</module>		
+		<module>client</module>
+	</modules>
+	
+	<build>
+		<plugins>	 	
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>      
+				<executions>
+					<execution>
+					<id>enforce-versions</id>
+					<goals>
+						<goal>enforce</goal>
+					</goals>
+					<configuration>
+						<rules>                 
+						   <requireMavenVersion>
+								<version>[3.6.3]</version>
+						   </requireMavenVersion>
+						</rules> 
+						<rules>
+							<requireJavaVersion>
+							<version>[11.0.12]</version>
+							</requireJavaVersion>
+					   </rules>    
+					</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>

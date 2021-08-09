@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  mutualtlstestclient:
+    container_name: client.mutualtls.devtest
+    image: "fujitsuuk/mutualtlstestclient:snapshot"
+    depends_on:
+        - mutualtlstestserver
+  mutualtlstestserver:
+    container_name: server.mutualtls.devtest
+    image: "fujitsuuk/mutualtlstestserver:snapshot"
+    restart: always

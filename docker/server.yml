@@ -1,0 +1,11 @@
+server:
+  # Port for incoming traffic
+  port: 443
+  ssl:
+    enabled: true
+    key-alias: server.mutualtls.devtest
+    key-store: server-keystore.p12
+    key-store-password: mutualtls
+    trust-store: server-truststore.p12
+    trust-store-password: mutualtls
+    client-auth: need

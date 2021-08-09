@@ -1,0 +1,26 @@
+[ req ]
+default_bits       = 2048
+distinguished_name = req_distinguished_name
+req_extensions     = req_ext
+prompt             = yes
+[ req_distinguished_name ]
+countryName                 = Country
+countryName_default         = UK
+stateOrProvinceName         = County
+stateOrProvinceName_default = Berkshire
+localityName                = Town or City
+localityName_default        = Bracknell
+organizationName            = Organisation
+organizationName_default    = Fujitsu
+commonName                  = Common Name
+commonName_default          = server.mutualtls.devtest
+[ req_ext ]
+basicConstraints            = CA:FALSE
+nsCertType                  = server
+nsComment                   = "Test Server Generated Certificate"
+keyUsage                    = critical, digitalSignature, keyEncipherment
+extendedKeyUsage            = serverAuth
+subjectAltName              = @alt_names
+[alt_names]
+DNS.1   = server.mutualtls.devtest
+DNS.2   = mutualtls.devtest

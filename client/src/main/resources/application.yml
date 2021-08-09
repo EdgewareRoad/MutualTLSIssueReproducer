@@ -1,0 +1,10 @@
+logging:
+  level:
+    mutualtlsissue: DEBUG
+
+test-client:
+  # URL of external server. At build time, this doesn't use TLS. We add this in Docker later
+  externalWebService: http://localhost:8099/
+
+
+

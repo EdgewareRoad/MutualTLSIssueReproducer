@@ -1,0 +1,7 @@
+server:
+  # Port for incoming traffic
+  port: 8099
+  ssl:
+    # For build purposes, don't enable TLS. We do this in Docker
+    enabled: false
+

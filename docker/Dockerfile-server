@@ -1,0 +1,11 @@
+FROM openjdk:11.0.12
+# Change TimeZone
+ENV TZ=Europe/London
+RUN mkdir /mnt/app
+COPY temp/mutualtls-server-SNAPSHOT.jar /mnt/app/mutualtls-server.jar
+COPY server.yml /mnt/app/application.yml
+COPY temp/server-keystore.p12 /mnt/app/server-keystore.p12
+COPY temp/server-truststore.p12 /mnt/app/server-truststore.p12
+WORKDIR /mnt/app
+CMD ["java","-XX:InitialRAMPercentage=50","-XX:MaxRAMPercentage=75","-Djavax.net.debug=none","-Dspring.config.location=/mnt/app/","-jar","/mnt/app/mutualtls-server.jar"]
+EXPOSE 443/TCP

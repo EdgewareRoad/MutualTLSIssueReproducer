@@ -1,0 +1,10 @@
+FROM openjdk:11.0.12
+# Change TimeZone
+ENV TZ=Europe/London
+RUN mkdir /mnt/app
+COPY temp/mutualtls-client-SNAPSHOT.jar /mnt/app/mutualtls-client.jar
+COPY client.yml /mnt/app/application.yml
+COPY temp/client-keystore.p12 /mnt/app/client-keystore.p12
+COPY temp/client-truststore.p12 /mnt/app/client-truststore.p12
+WORKDIR /mnt/app
+CMD ["java","-XX:InitialRAMPercentage=50","-XX:MaxRAMPercentage=75","-Djavax.net.debug=ssl:handshake","-Dspring.config.location=/mnt/app/","-jar","/mnt/app/mutualtls-client.jar"]
